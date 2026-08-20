@@ -1,0 +1,549 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alexander J. Craigie - Class A Golf Course Superintendent with 11+ years of experience in golf course management, agronomy, irrigation, drainage, and tournament preparation.">
+    <title>Alexander J. Craigie | Golf Course Superintendent</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #24342a;
+            background: #f7f8f4;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: #173b2a;
+            color: white;
+            height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #c8d99a;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-button {
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 30px;
+            background: white;
+            min-width: 190px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            display: block;
+            color: #24342a;
+            padding: 13px 18px;
+        }
+
+        .dropdown-content a:hover {
+            background: #eef2e8;
+            color: #173b2a;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: calc(100vh - 76px);
+            background:
+                linear-gradient(rgba(18, 54, 37, 0.78), rgba(18, 54, 37, 0.88)),
+                linear-gradient(135deg, #315d42, #173b2a);
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 80px 7%;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #c8d99a;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(3rem, 7vw, 6rem);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-weight: 400;
+            color: #e1ead6;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 720px;
+            font-size: 1.15rem;
+            color: #e5ece4;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .button-primary {
+            background: #c8d99a;
+            color: #173b2a;
+        }
+
+        .button-primary:hover {
+            background: #dbe8b7;
+            transform: translateY(-2px);
+        }
+
+        .button-outline {
+            border: 1px solid #dce8d5;
+            color: white;
+        }
+
+        .button-outline:hover {
+            background: white;
+            color: #173b2a;
+        }
+
+        /* Stats */
+        .stats {
+            background: white;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 45px 7%;
+            gap: 30px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+        }
+
+        .stat {
+            text-align: center;
+            border-right: 1px solid #dfe4dc;
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-family: Georgia, "Times New Roman", serif;
+            color: #28583c;
+            font-size: 2.3rem;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            color: #66736a;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Sections */
+        section {
+            padding: 90px 7%;
+        }
+
+        .section-heading {
+            max-width: 750px;
+            margin-bottom: 45px;
+        }
+
+        .section-heading span {
+            color: #557b42;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .section-heading h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            color: #173b2a;
+            font-size: 2.7rem;
+            margin: 8px 0 15px;
+        }
+
+        .section-heading p {
+            color: #66736a;
+            font-size: 1.05rem;
+        }
+
+        /* Highlights */
+        .highlights {
+            background: #eef2e8;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 7px;
+            box-shadow: 0 4px 18px rgba(25,55,35,0.07);
+            border-top: 4px solid #557b42;
+        }
+
+        .card h3 {
+            color: #173b2a;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #66736a;
+        }
+
+        /* Career */
+        .career-intro {
+            max-width: 850px;
+            font-size: 1.15rem;
+            color: #536158;
+        }
+
+        .career-intro strong {
+            color: #28583c;
+        }
+
+        /* Footer */
+        footer {
+            background: #122d20;
+            color: #dbe4da;
+            padding: 45px 7%;
+            text-align: center;
+        }
+
+        footer h3 {
+            color: white;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #b9c7ba;
+            margin-bottom: 15px;
+        }
+
+        footer a {
+            color: #c8d99a;
+            text-decoration: none;
+        }
+
+        .copyright {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #31503d;
+            font-size: 0.8rem;
+            color: #8ea092;
+        }
+
+        /* Mobile */
+        @media (max-width: 800px) {
+            nav {
+                padding: 0 5%;
+            }
+
+            .logo {
+                font-size: 1rem;
+            }
+
+            .nav-links {
+                gap: 14px;
+            }
+
+            .nav-links > li:not(.dropdown) {
+                display: none;
+            }
+
+            .hero {
+                padding: 70px 6%;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat {
+                border-right: none;
+            }
+
+            section {
+                padding: 65px 6%;
+            }
+
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">ALEX CRAIGIE</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+
+            <li class="dropdown">
+                <span class="dropdown-button">Menu ▾</span>
+
+                <div class="dropdown-content">
+                    <a href="resume.html">Resume</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-content">
+
+            <div class="eyebrow">Class A Golf Course Superintendent</div>
+
+            <h1>Alexander J. Craigie</h1>
+
+            <h2>Golf Course Management • Agronomy • Team Leadership</h2>
+
+            <p>
+                Golf course superintendent with more than 11 years of experience
+                managing teams, developing agronomic programs, improving course
+                infrastructure, and producing tournament-quality playing conditions.
+            </p>
+
+            <div class="buttons">
+                <a class="button button-primary" href="portfolio.html">
+                    View My Portfolio
+                </a>
+
+                <a class="button button-outline" href="resume.html">
+                    View Resume
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Career Statistics -->
+    <div class="stats">
+
+        <div class="stat">
+            <div class="stat-number">11+</div>
+            <div class="stat-label">Years of Golf Course Management</div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number">$550K</div>
+            <div class="stat-label">Annual Maintenance Budget</div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number">1,500+</div>
+            <div class="stat-label">Feet of Drainage Installed</div>
+        </div>
+
+        <div class="stat">
+            <div class="stat-number">20%</div>
+            <div class="stat-label">Reduction in Poa annua</div>
+        </div>
+
+    </div>
+
+    <!-- Career Highlights -->
+    <section class="highlights">
+
+        <div class="section-heading">
+            <span>Career Highlights</span>
+
+            <h2>Building better playing conditions through thoughtful course management.</h2>
+
+            <p>
+                A career focused on agronomic excellence, infrastructure improvement,
+                employee development, and consistent playing conditions.
+            </p>
+        </div>
+
+        <div class="highlight-grid">
+
+            <div class="card">
+                <h3>Agronomic Management</h3>
+
+                <p>
+                    Developed and implemented comprehensive agronomic programs
+                    while managing fertilizer, chemical applications, purchasing,
+                    record keeping, and maintenance budgets.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Course Infrastructure</h3>
+
+                <p>
+                    Led drainage, irrigation, bunker, and tee construction projects,
+                    including more than 1,500 feet of drainage installation and
+                    replacement of 30 irrigation mainline valves.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Tournament Conditions</h3>
+
+                <p>
+                    Prepared courses for championship events while producing
+                    consistent, tournament-quality playing conditions for members,
+                    guests, and competitive players.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- About Preview -->
+    <section>
+
+        <div class="section-heading">
+            <span>Professional Profile</span>
+
+            <h2>Experience grounded in agronomy, leadership, and communication.</h2>
+        </div>
+
+        <p class="career-intro">
+            From maintaining athletic fields at <strong>Clemson University</strong>
+            to serving as a Golf Course Superintendent, my career has provided
+            experience across different climates, course conditions, construction
+            projects, and competitive events.
+            <br><br>
+            I focus on building strong teams, maintaining open communication with
+            club leadership, and developing sustainable maintenance programs that
+            consistently deliver high-quality playing conditions.
+        </p>
+
+        <br><br>
+
+        <a class="button button-primary" href="about.html">
+            Learn More About Me
+        </a>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+        <h3>Alexander J. Craigie</h3>
+
+        <p>Class A Golf Course Superintendent</p>
+
+        <a href="mailto:ajcraigie@yahoo.com">
+            ajcraigie@yahoo.com
+        </a>
+
+        <div class="copyright">
+            © 2026 Alexander J. Craigie. All rights reserved.
+        </div>
+
+    </footer>
+
+</body>
+</html>
+```
