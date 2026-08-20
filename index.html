@@ -4,11 +4,22 @@
 <head>
     <style>
 .name-photo {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    justify-content: space-between;
     gap: 60px;
     margin-bottom: 30px;
+}
+
+.name-photo h1 {
+    margin: 0;
+}
+
+.name-photo img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
 .name-photo h1 {
@@ -120,51 +131,72 @@
             display: block;
         }
 
-        /* Hero */
-        .hero {
-            min-height: calc(100vh - 76px);
-            background:
-                linear-gradient(rgba(18, 54, 37, 0.78), rgba(18, 54, 37, 0.88)),
-                linear-gradient(135deg, #315d42, #173b2a);
-            color: white;
-            display: flex;
-            align-items: center;
-            padding: 80px 7%;
-        }
+      /* Hero */
+.hero {
+    min-height: calc(100vh - 76px);
+    background:
+        linear-gradient(rgba(18, 54, 37, 0.78), rgba(18, 54, 37, 0.88)),
+        linear-gradient(135deg, #315d42, #173b2a);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 70px 7%;
+}
 
-        .hero-content {
-            max-width: 900px;
-        }
+.hero-content {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
 
-        .eyebrow {
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #c8d99a;
-            font-size: 0.9rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
+.hero-layout {
+    display: grid;
+    grid-template-columns: 55% 45%;
+    align-items: center;
+    gap: 50px;
+}
 
-        .hero h1 {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(3rem, 7vw, 6rem);
-            line-height: 1;
-            margin-bottom: 20px;
-        }
+.hero-text {
+    padding-right: 20px;
+}
 
-        .hero h2 {
-            font-size: clamp(1.3rem, 3vw, 2rem);
-            font-weight: 400;
-            color: #e1ead6;
-            margin-bottom: 25px;
-        }
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #c8d99a;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
 
-        .hero p {
-            max-width: 720px;
-            font-size: 1.15rem;
-            color: #e5ece4;
-            margin-bottom: 35px;
-        }
+.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: clamp(1.3rem, 2.5vw, 2rem);
+    font-weight: 400;
+    color: #e1ead6;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    max-width: 720px;
+    font-size: 1.15rem;
+    color: #e5ece4;
+    margin-bottom: 35px;
+}
+
+.hero-photo img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 14px;
+    display: block;
+}
 
         .buttons {
             display: flex;
